@@ -21,7 +21,7 @@ def pedir_fracc()->tuple:
             parte es para cambiar el mensaje de error, debe ser: numerador o denominador 
         """
         
-        error_es_cero={ "numerador": "Ingrese un numerador diferente, no vaya a sumar un 0 señor",
+        error_es_cero={ "numerador": "Error, esta sumando 0",
                        "denominador": "Error, division por 0"}
 
         error_es_float={"numerador": "Ingrese un numerador diferente, debe ser entero",
@@ -68,9 +68,12 @@ def simplificado(fracc):
         grande=numerador
         chico=denominador
 
-    resto= grande%chico
-
-    divisor=chico
+    if chico !=0:
+        resto= grande%chico 
+        divisor=chico 
+    else:
+        resto=0
+        divisor=grande
 
     nuevo_grande=chico
     nuevo_chico=resto
