@@ -127,7 +127,6 @@ def operar_fracciones(fracc1, operador, fracc2):
 
     return (numer_final, denom_final)
 
-
 #
 # --------------- Termina la Logica -------------------------
 #

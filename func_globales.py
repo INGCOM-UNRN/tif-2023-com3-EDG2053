@@ -27,6 +27,7 @@ def numero_valido(num):
 
     return num
 
+
 def operador_valido(operador):
     """
         Verifica si el operador es valido ( +, -, x, / o = )
@@ -79,4 +80,3 @@ def operacion(num1, operador, num2):
 #
 # ---------FIN Func. de Realizar operaciones ---------
 #
-

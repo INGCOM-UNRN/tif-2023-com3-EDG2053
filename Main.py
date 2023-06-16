@@ -43,7 +43,6 @@ while opcion !=4:
     """)
 
     opcion= num_val( input("     Ingrese el numero de calculadora:  ") )
-    
 
 
 print("""

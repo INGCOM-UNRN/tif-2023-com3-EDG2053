@@ -1,5 +1,6 @@
 from func_globales import numero_valido, operador_valido, operacion
 
+
 def UI_clasica(num1="", oper="", num2="", result="")->None:
 
     print(f"""
