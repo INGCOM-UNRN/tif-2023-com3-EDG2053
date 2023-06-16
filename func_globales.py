@@ -1,4 +1,3 @@
-
 #
 # --------- Funciones de Validaciones ---------
 #
@@ -17,10 +16,12 @@ def numero_valido(num):
         except ValueError:
             num=input("Error, tiene que ingresar un numero: ")
         else:
-            num=float(num)
+            aux=float(num)
             
-            if num%1 == 0:
+            if aux%1 == 0:
                 num=int(num)
+            else:
+                num= float(num)
 
             loop=False
 
