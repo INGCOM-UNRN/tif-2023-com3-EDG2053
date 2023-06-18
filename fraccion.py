@@ -86,9 +86,13 @@ def simplificado(fracc):
 
         nuevo_grande=nuevo_chico
         nuevo_chico=resto
+
+    numerador_final= fracc[0]//divisor
+    denominador_final= fracc[1]//divisor 
+
     
-    resultado= ( int(fracc[0]/divisor), int(fracc[1]/divisor) )
-    
+    resultado=(numerador_final, denominador_final)
+
     return resultado
     
 
