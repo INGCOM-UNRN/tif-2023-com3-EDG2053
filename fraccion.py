@@ -21,7 +21,7 @@ def pedir_fracc()->tuple:
             parte es para cambiar el mensaje de error, debe ser: numerador o denominador 
         """
         
-        error_es_cero={ "numerador": "Error, esta sumando 0",
+        error_es_cero={ "numerador": "Error, esta a punto de sumar 0",
                        "denominador": "Error, division por 0"}
 
         error_es_float={"numerador": "Ingrese un numerador diferente, debe ser entero",
