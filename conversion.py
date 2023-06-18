@@ -1,13 +1,19 @@
 #CONVERSIONES (3)
 from func_globales import numero_valido
 
+# --------- Func. Conversiones ---------
 
 def a_octal():
+    # --------- Decimal --> Octal ---------  
     
-    #DECIMAL A OCTAL
     print("DECIMAL ---> OCTAL")
     num1 = (input("ingrese decimal: "))
-    num1 = numero_valido(num1) # Validar numero.
+    num1 = numero_valido(num1) # Validar numero.(Caracteres)
+    
+    while not ent_pos(num1): # Validar numero. (Entero positivo)
+        num1 = input("Ingrese numero entero positivo: ")
+        num1 = numero_valido(num1) 
+    
     octal = "" # Asignar valor (UnboundLocalError). 
     
     while num1 >= 8: # Verificacion.
@@ -19,12 +25,18 @@ def a_octal():
     octal = octal [::-1] #Invertir cadena.
     print(f"El octal es: {octal}")
 
+
 def a_binario():
-    
-    #DECIMAL A BINARIO
+    # --------- Decimal --> Binario ---------
+
     print("DECIMAL ---> BINARIO")
-    num1 = input("Ingrese decimal: ")
-    num1 = numero_valido(num1) # Validar numero.
+    num1 = (input("Ingrese decimal: "))
+    num1 = numero_valido(num1) # Validar numero.(Caracteres)
+    
+    while not ent_pos(num1):# Validar numero. (Entero positivo)
+        num1 = input("Ingrese numero entero positivo: ")
+        num1 = numero_valido(num1) 
+    
     binario = "" # Asignar valor (UnboundLocalError). 
     
     while num1 >= 2: # Verificacion.
@@ -34,9 +46,11 @@ def a_binario():
         
     binario += str(num1) # Decimal a Str.
     binario = binario [::-1] #Invertir cadena.
-    print("El binario es", binario)
+    print(f"El binario es: {binario}")
+
 
 def a_hexa():
+    # --------- Decimal --> Hexadecimal ---------
     
     #Diccionario de valores hexadecimales.
     valores_hexa = {0: "0", 1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 
@@ -44,7 +58,11 @@ def a_hexa():
     print("DECIMAL ---> HEXA")
 
     num1 = input("ingrese decimal: ")
-    num1 = numero_valido(num1) # Validar numero.
+    num1 = numero_valido(num1) # Validar numero.(Caracteres)
+    
+    while not ent_pos(num1):# Validar numero. (Entero positivo)
+        num1 = input("Ingrese numero entero positivo: ")
+        num1 = numero_valido(num1) 
     
     restos = [] # Lista para restos 
     hexadecimales = "" # Guardar valores hexa.
@@ -56,16 +74,17 @@ def a_hexa():
         
         restos.append(resto) # Agregar el resto a lista restos.
         
-    restos.append(num1)
+    restos.append(num1) # Agrega cociente a restos
     
     for r in (restos): # Leer lista residuos.
         hexadecimales += valores_hexa[r]
         
         
-        num_hexa = hexadecimales [::-1] # Join elimina corchetes y comas de la lista
+        num_hexa = hexadecimales [::-1] # Invertir cadena.
         
     
-    print(num_hexa)
+    print(f"El hexadecimal es: {num_hexa}")
+    
 
 # --------- Menú de Conversiones ---------
 
@@ -87,10 +106,16 @@ def Calculadora_Conversion():
     
     if opcion == 1:
             a_octal()
+              
     elif opcion == 2:
             a_binario()
+              
     elif opcion == 3:
             a_hexa()
-    else:
-        pass    
 
+# --------- Validar numero entero positivo ---------           
+def ent_pos(num1):
+    if type(num1) == int and num1 >= 0:
+        return True
+    else:
+        return False
