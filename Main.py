@@ -18,9 +18,6 @@ print("""
 opcion= num_val( input("     Ingrese el numero de calculadora:  ") )
 
 
-
-
-
 while opcion !=4:
 
     while opcion<=0 or opcion>=5:
