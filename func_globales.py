@@ -19,7 +19,11 @@ def numero_valido(num):
             aux=float(num)
             
             if aux%1 == 0:
-                num=int(num)
+                if ".0" in num:
+                    num= int(aux)
+                else:
+                    num=int(num)
+
             else:
                 num= float(num)
 
